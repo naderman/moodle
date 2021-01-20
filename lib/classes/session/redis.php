@@ -115,7 +115,7 @@ class redis extends handler {
         $updatefreq = empty($CFG->session_update_timemodified_frequency) ? 20 : $CFG->session_update_timemodified_frequency;
         $this->timeout = $CFG->sessiontimeout + $updatefreq + MINSECS;
 
-        $this->lockexpire = $CFG->sessiontimeout;
+        $this->lockexpire = ini_get('max_execution_time');
         if (isset($CFG->session_redis_lock_expire)) {
             $this->lockexpire = (int)$CFG->session_redis_lock_expire;
         }
