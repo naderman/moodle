@@ -28,6 +28,7 @@
 if (!defined('NO_DEBUG_DISPLAY')) {
     define('NO_DEBUG_DISPLAY', true);
 }
+define('READ_ONLY_SESSION', true);
 
 require_once('config.php');
 require_once('lib/filelib.php');
